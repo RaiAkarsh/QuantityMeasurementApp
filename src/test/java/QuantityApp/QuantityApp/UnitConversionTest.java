@@ -1,6 +1,9 @@
-package com.example.QuantityApp;
+package QuantityApp.QuantityApp;
 
 import org.junit.jupiter.api.Test;
+
+import QuantityApp.QuantityApp.UnitConversion;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UnitConversionTest {
