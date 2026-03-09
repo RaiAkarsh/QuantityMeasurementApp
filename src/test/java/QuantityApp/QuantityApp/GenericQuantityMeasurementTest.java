@@ -1,6 +1,9 @@
-package com.example.QuantityApp;
+package QuantityApp.QuantityApp;
 
 import org.junit.jupiter.api.Test;
+
+import QuantityApp.QuantityApp.GenericQuantityMeasurement;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GenericQuantityMeasurementTest {

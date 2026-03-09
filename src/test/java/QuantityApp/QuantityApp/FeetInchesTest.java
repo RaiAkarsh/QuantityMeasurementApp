@@ -1,6 +1,9 @@
-package com.example.QuantityApp;
+package QuantityApp.QuantityApp;
 
 import org.junit.jupiter.api.Test;
+
+import QuantityApp.QuantityApp.FeetInchesMeasurement;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FeetInchesTest {
