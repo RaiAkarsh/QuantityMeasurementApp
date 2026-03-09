@@ -56,15 +56,11 @@ public class UnitAddition {
             if(other == null) {
                 throw new IllegalArgumentException("Second operand cannot be null");
             }
-
-            // Converting both to base
             double base1 = this.unit.toBase(this.value);
             double base2 = other.unit.toBase(other.value);
-
-            // Adding in base
+            
             double sumBase = base1 + base2;
-
-            // Converting back to first operand unit
+            
             double result = this.unit.fromBase(sumBase);
 
             return new QuantityLength(result, this.unit);

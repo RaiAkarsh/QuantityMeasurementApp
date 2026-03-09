@@ -19,9 +19,7 @@ class UnitConversionTest {
 
     @Test
     void testYardsToFeet() {
-        assertEquals(9.0,
-        		UnitConversion.QuantityLength
-                        .convert(3.0, UnitConversion.LengthUnit.YARDS, UnitConversion.LengthUnit.FEET), EPS);
+        assertEquals(9.0,UnitConversion.QuantityLength.convert(3.0, UnitConversion.LengthUnit.YARDS, UnitConversion.LengthUnit.FEET), EPS);
     }
 
     @Test
@@ -35,11 +33,8 @@ class UnitConversionTest {
     void testRoundTripConversion() {
 
         double original = 5.0;
-
         double converted = UnitConversion.QuantityLength.convert(original, UnitConversion.LengthUnit.FEET, UnitConversion.LengthUnit.YARDS);
-
         double back = UnitConversion.QuantityLength.convert(converted, UnitConversion.LengthUnit.YARDS, UnitConversion.LengthUnit.FEET);
-
         assertEquals(original, back, EPS);
     }
 
@@ -59,9 +54,7 @@ class UnitConversionTest {
 
     @Test
     void testInvalidUnit() {
-        assertThrows(IllegalArgumentException.class, () ->
-        UnitConversion.QuantityLength
-                        .convert(1.0, null, UnitConversion.LengthUnit.FEET));
+        assertThrows(IllegalArgumentException.class, () ->UnitConversion.QuantityLength.convert(1.0, null, UnitConversion.LengthUnit.FEET));
     }
 
     @Test
