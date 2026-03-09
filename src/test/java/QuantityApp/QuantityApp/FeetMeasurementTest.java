@@ -1,7 +1,11 @@
-package com.example.QuantityApp;
+package QuantityApp.QuantityApp;
+
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import QuantityApp.QuantityApp.FeetMeasurement;
 
 class FeetMeasurementTest {
 
