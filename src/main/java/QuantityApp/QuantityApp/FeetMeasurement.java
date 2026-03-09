@@ -1,4 +1,6 @@
-package com.example.QuantityApp;
+package QuantityApp.QuantityApp;
+
+
 
 public class FeetMeasurement {
 
