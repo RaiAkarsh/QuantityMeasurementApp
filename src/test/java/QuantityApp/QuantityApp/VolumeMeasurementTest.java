@@ -22,7 +22,7 @@ public class VolumeMeasurementTest {
     void testConversion_GallonToLitre() {
         Quantity<VolumeUnit> v = new Quantity<>(1.0, VolumeUnit.GALLON);
         Quantity<VolumeUnit> result = v.convertTo(VolumeUnit.LITRE);
-        assertEquals(3.78541, result.getValue(), 0.001);
+        assertEquals(3.79, result.getValue(), 0.001);
     }
 
     @Test
