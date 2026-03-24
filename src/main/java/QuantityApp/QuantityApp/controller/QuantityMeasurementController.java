@@ -1,27 +1,60 @@
 package QuantityApp.QuantityApp.controller;
 
 import QuantityApp.QuantityApp.dto.QuantityDTO;
+import QuantityApp.QuantityApp.model.QuantityMeasurementEntity;
 import QuantityApp.QuantityApp.service.IQuantityMeasurementService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/quantities")
 public class QuantityMeasurementController {
 
+    @Autowired
     private IQuantityMeasurementService service;
 
-    public QuantityMeasurementController(IQuantityMeasurementService service) {
-        this.service = service;
+    // CREATE
+    @PostMapping("/add")
+    public QuantityDTO add(@RequestBody List<QuantityDTO> list) {
+        return service.add(list.get(0), list.get(1));
     }
 
-    public void compare(QuantityDTO a, QuantityDTO b) {
-        System.out.println(service.compare(a,b));
+    // READ ALL
+    @GetMapping
+    public List<QuantityMeasurementEntity> getAll() {
+        return service.getAll();
     }
 
-    public void add(QuantityDTO a, QuantityDTO b) {
-        QuantityDTO result = service.add(a,b);
-        System.out.println(result.getValue()+" "+result.getUnit());
+    // READ BY ID
+    @GetMapping("/{id}")
+    public QuantityMeasurementEntity getById(@PathVariable Long id) {
+        return service.getById(id);
     }
 
-    public void convert(QuantityDTO a, String target) {
-        QuantityDTO result = service.convert(a,target);
-        System.out.println(result.getValue()+" "+result.getUnit());
+    // DELETE
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Long id) {
+        service.delete(id);
+        return "Deleted successfully";
     }
+
+    @PostMapping("/compare")
+    public boolean compare(@RequestBody List<QuantityDTO> list) {
+        return service.compare(list.get(0), list.get(1));
+    }
+
+    @PostMapping("/convert")
+    public QuantityDTO convert(@RequestBody QuantityDTO dto,
+                               @RequestParam String target) {
+        return service.convert(dto, target);
+    }
+
+    @PutMapping("/{id}")
+    public QuantityMeasurementEntity update(@PathVariable Long id,
+                                            @RequestBody QuantityMeasurementEntity entity) {
+        return service.update(id, entity);
+    }
+
 }
