@@ -1,0 +1,96 @@
+# ===============================
+
+# 🚀 SPRING BOOT + MAVEN
+
+# ===============================
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ===============================
+
+# 🔐 ENV & CONFIG (SECRETS SAFE)
+
+# ===============================
+
+.env
+.env.*
+application-dev.properties
+application-local.properties
+
+# ===============================
+
+# 💻 IDE FILES
+
+# ===============================
+
+## IntelliJ
+
+.idea/
+*.iws
+*.iml
+*.ipr
+
+## Eclipse
+
+.settings/
+.classpath
+.project
+
+## VS Code
+
+.vscode/
+
+# ===============================
+
+# 🖥️ OS FILES
+
+# ===============================
+
+.DS_Store
+Thumbs.db
+
+# ===============================
+
+# 📦 LOG FILES
+
+# ===============================
+
+*.log
+
+# ===============================
+
+# ☕ JAVA
+
+# ===============================
+
+*.class
+
+# ===============================
+
+# 🧪 TEST OUTPUT
+
+# ===============================
+
+/test-output/
+/surefire-reports/
+
+# ===============================
+
+# 📦 BUILD TOOLS
+
+# ===============================
+
+.gradle/
+build/
+
+# ===============================
+
+# 🔥 OPTIONAL (IF USING NODE)
+
+# ===============================
+
+node_modules/
+dist/
